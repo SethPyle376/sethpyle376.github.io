@@ -1,6 +1,9 @@
 <html>
-    <body onload="getNoteName()">
+    <body onload="loadNote()">
         <script src="js/NoteApp.js"></script>
         <h1 id="noteHeader"></h1>
+
+        <textarea id="noteContent" rows=20 cols=60></textarea>
+        <button onclick="saveNote()">Save</button>
     </body>
 </html>
