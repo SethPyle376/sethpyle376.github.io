@@ -1,5 +1,5 @@
 const binKey = 'f4ff985f5f5baa336274aceaecb83c20'
-const binUrl = 'https://pastebin.com/api/api_post.php'
+const binUrl = 'https://cors-anywhere.herokuapp.com/https://pastebin.com/api/api_post.php'
 
 
 
@@ -19,6 +19,10 @@ function loadNote() {
     setNoteName()
     var note = localStorage.getItem(getNoteName())
     document.getElementById("noteContent").value = note
+    if (localStorage.getItem(getNoteName() + '-pastebin')) {
+        const link = `<a href=${localStorage.getItem(getNoteName() + '-pastebin')}>Pastebin Link</a>`
+        document.getElementById("pasteBinLink").innerHTML = link
+    }
 }
 
 function saveNote() {
@@ -27,19 +31,18 @@ function saveNote() {
 }
 
 function binNote() {
-
-    const binOptions = {
-        api_dev_key: binKey,
-        api_option: 'paste',
-        api_paste_code: document.getElementById("noteContent").value,
-        api_paste_name: getNoteName(),
-        api_paste_private: 1,
-    }
-
+    const options = `api_dev_key=${binKey}&api_option=paste&api_paste_code=${document.getElementById("noteContent").value}&api_paste_name=${getNoteName()}&api_paste_private=1`
     fetch(binUrl, {
         method: 'POST',
-        body: JSON.stringify(binOptions)
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: options
     }).then(response => {
         console.log(response)
+        return response.text()
+    }).then(data => {
+        console.log(data)
+        localStorage.setItem(getNoteName() + '-pastebin', data)
     })
 }
