@@ -31,6 +31,7 @@ function saveNote() {
 }
 
 function binNote() {
+    saveNote()
     const options = `api_dev_key=${binKey}&api_option=paste&api_paste_code=${document.getElementById("noteContent").value}&api_paste_name=${getNoteName()}&api_paste_private=1`
     fetch(binUrl, {
         method: 'POST',
@@ -39,10 +40,11 @@ function binNote() {
         },
         body: options
     }).then(response => {
-        console.log(response)
         return response.text()
     }).then(data => {
         console.log(data)
         localStorage.setItem(getNoteName() + '-pastebin', data)
+        loadNote()
     })
+    alert("Please wait 5-10 seconds, the Pastebin API is slow sometimes...")
 }
