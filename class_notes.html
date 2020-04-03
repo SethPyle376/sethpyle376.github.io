@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="mobile-container">
+            <div class="topnav">
+                <a href="index.html" class="active">Jason Pyle's Projects</a>
+
+                <div id="myLinks">
+                    <a href="todo.html">Todo App</a>
+                    <a href="note_taking_list.html">Note Taking App</a>
+                    <a href="class_notes.html">Class Notes</a>
+                </div>
+
+
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        
+            <div id="noteList">
+            </div>
+        </div>
+        <script>
+            var links = ''
+            for (var i = 2; i <= 10; i++) {
+                if (i != 6) {
+                    var link = `notes/week${i}.html`
+                    links += `<a href=${link}>Week ${i} Notes</a><br>`
+                }
+            }
+            document.getElementById("noteList").innerHTML = links
+        </script>
+    </body>
+</html>

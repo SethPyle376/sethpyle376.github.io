@@ -1,0 +1,29 @@
+<h1 id="week-10">Week 10</h1>
+<h2 id="validating-forms">Validating Forms</h2>
+<p>Helps ensure data submitted matches the requirements set in the various form controls.</p>
+<ul>
+<li>Field is required</li>
+<li>Field needs to be in a certain format</li>
+<li>Field needs to be a valid email address</li>
+<li>Password needs to be stronger</li>
+</ul>
+<p>HTML5 has some built in validation, other validation can be implemented in javascript.</p>
+<p>Built in validation is accessible through required, min, max, type, and pattern.</p>
+<h2 id="example">Example</h2>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">&lt;form&gt;
+    &lt;label <span class="kw">for</span>=<span class="st">&quot;choose&quot;</span>&gt;Would you prefer a banana or cherry? (required)&lt;<span class="ot">/label&gt;</span>
+<span class="ot">    &lt;input id=&quot;choose&quot; name=&quot;i_like&quot; required&gt;</span>
+<span class="ot">    &lt;button&gt;Submit&lt;/button</span>&gt;
+&lt;<span class="ot">/form&gt;</span></code></pre>
+<h2 id="using-fetch">Using fetch</h2>
+<p>Fetch is used to make async http calls to other servers.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="fu">fetch</span>(<span class="st">&#39;http://example.com/movies.json&#39;</span>)
+  .<span class="fu">then</span>((response) =&gt; {
+    <span class="kw">return</span> <span class="ot">response</span>.<span class="fu">json</span>();
+  })
+  .<span class="fu">then</span>((data) =&gt; {
+    <span class="ot">console</span>.<span class="fu">log</span>(data);
+  });</code></pre>
+<p>fetch() provides all options available to an http call. (method, headers, body, etc...)</p>
+<p>credentials can be included with credentials: 'include' options.</p>
+<p>Response can be fetched using .then() on returned promise.</p>
