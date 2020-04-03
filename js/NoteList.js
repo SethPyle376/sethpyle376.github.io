@@ -26,7 +26,7 @@ function buildNoteList() {
     var noteList = getNoteList()
 
     noteList.forEach(note => {
-        content += "<tr><th><a href=\"/note_taking_app.html?note=" + note + "\">" + note + "</a></th></tr>"
+        content += "<tr><th class=\"note-list-text\"><a href=\"note_taking_app.html?note=" + note + "\">" + note + "</a></th></tr>"
     })
 
     content += "</table>"

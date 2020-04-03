@@ -1,16 +1,52 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
     <body>
-        <table>
-            <tr>
-                <th>
-                    <a href="/todo.html">Todo App</a>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <a href="/note_taking_list.html">Note Taking App</a>
-                </th>
-            </tr>
-        </table>
+        <div class="mobile-container">
+            <div class="topnav">
+                <a href="index.html" class="active">Jason Pyle's Projects</a>
+
+                <div id="myLinks">
+                    <a href="todo.html">Todo App</a>
+                    <a href="note_taking_list.html">Note Taking App</a>
+                </div>
+
+
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        
+            <div style="padding-left:16px">
+                <table>
+                    <tr>
+                        <th class="homepage-list links">
+                            <a href="todo.html">Todo App</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="homepage-list links">
+                            <a href="note_taking_list.html">Note Taking App</a>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myLinks");
+              if (x.style.display === "block") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+            }
+        </script>
+
+
     </body>
 </html>

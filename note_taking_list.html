@@ -1,16 +1,47 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <div class="topnav">
+        <a href="index.html" class="active">Jason Pyle's Projects</a>
+
+        <div id="myLinks">
+            <a href="todo.html">Todo App</a>
+            <a href="note_taking_list.html">Note Taking App</a>
+        </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
     <body onload="buildNoteList()">
         <script src="js/NoteList.js"></script>
-        <h1>
-            Note List
-        </h1>
-        <div id="content">
-            <div id="noteCreate">
-                <input type="text" id="newNote" placeholder="New Note"></input>
-                <button onclick="createNote()">Create</button>
-            </div>
-            <div id="noteList">
+        <div class="mobile-container">
+            <div class="flex-container">
+                <h1>
+                    Note List
+                </h1>
+                <div id="content">
+                    <div id="noteCreate" >
+                        <input type="text" id="newNote" placeholder="New Note" class="new-item"></input>
+                        <button onclick="createNote()">Create</button>
+                    </div>
+                    <div id="noteList" class="list">
+                    </div>
             </div>
         </div>
+     </div>
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myLinks");
+              if (x.style.display === "block") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+            }
+        </script>
     </body>
 </html>

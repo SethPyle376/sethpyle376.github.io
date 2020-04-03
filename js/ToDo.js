@@ -60,9 +60,9 @@ function updateTable() {
     currentList.forEach(todo => {
         content += "<tr>"
         if (todo.completed) {
-            content += "<th><input checked=\"" + todo.completed +"\"type =\"checkbox\" onClick=\"handleCheck(" + todo.id + "," + "this.checked)\"></input></th>"
+            content += "<th><input class=\"checkbox\" checked=\"" + todo.completed +"\"type =\"checkbox\" onClick=\"handleCheck(" + todo.id + "," + "this.checked)\"></input></th>"
         } else {
-            content += "<th><input type =\"checkbox\" onClick=\"handleCheck(" + todo.id + "," + "this.checked)\"></input></th>"
+            content += "<th><input class=\"checkbox\" type =\"checkbox\" onClick=\"handleCheck(" + todo.id + "," + "this.checked)\"></input></th>"
         }
 
         content += "<th>" + (todo.completed ? "<del>" : "") + todo.content + (todo.completed ? "</del>" : "") + "</th>"
